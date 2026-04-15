@@ -1,0 +1,243 @@
+:root {
+  --bg-color: #f1f5f9;
+  --card-bg: #ffffff;
+  --border-color: #e2e8f0;
+  --primary: #3b82f6; 
+  --text-main: #475569;
+  --text-bright: #0f172a;
+  --text-dim: #64748b;
+  --timer-bg: rgba(0,0,0,0.1);
+  --glass-bg: rgba(0,0,0,0.02);
+  --glass-border: rgba(0,0,0,0.05);
+  --btn-bg: rgba(0,0,0,0.05);
+  --btn-border: rgba(0,0,0,0.1);
+  --dot-bg: rgba(0,0,0,0.15);
+  --bg-gradient: radial-gradient(circle at 50% 0%, rgba(59,130,246,0.15) 0%, transparent 50%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #0b0f19;
+    --card-bg: #161b22;
+    --border-color: #30363d;
+    --primary: #3b82f6; 
+    --text-main: #c9d1d9;
+    --text-bright: #ffffff;
+    --text-dim: #8b949e;
+    --timer-bg: rgba(255,255,255,0.05);
+    --glass-bg: rgba(0,0,0,0.2);
+    --glass-border: rgba(255,255,255,0.05);
+    --btn-bg: rgba(255,255,255,0.05);
+    --btn-border: rgba(255,255,255,0.1);
+    --dot-bg: rgba(255,255,255,0.2);
+    --bg-gradient: radial-gradient(circle at 50% 0%, rgba(59,130,246,0.1) 0%, transparent 50%);
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-color);
+  background-image: var(--bg-gradient);
+  color: var(--text-main);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 700px;
+  max-width: 90%;
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); filter: blur(4px); }
+  to { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+
+/* Circular Timer */
+.timer-container {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.timer-circle {
+  position: absolute;
+  transform: rotate(-90deg);
+  width: 140px;
+  height: 140px;
+}
+.timer-circle circle {
+  fill: transparent;
+  stroke-width: 4;
+  cx: 70;
+  cy: 70;
+  r: 66;
+}
+.timer-bg {
+  stroke: var(--timer-bg);
+}
+.timer-progress {
+  stroke: var(--primary);
+  stroke-linecap: round;
+  stroke-dasharray: 414.69; 
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1s linear;
+  filter: drop-shadow(0 0 8px rgba(59,130,246,0.5));
+}
+.timer-text {
+  font-size: 42px;
+  font-weight: 300;
+  color: var(--text-bright);
+  font-variant-numeric: tabular-nums;
+  z-index: 10;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+  backdrop-filter: blur(10px);
+}
+@media (prefers-color-scheme: dark) {
+  .card { box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); }
+}
+
+.header-content {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.brand-icon {
+  width: 72px;
+  height: 72px;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 8px 16px rgba(0,0,0,0.1));
+  border-radius: 12px;
+  background: #fff;
+  padding: 5px;
+}
+@media (prefers-color-scheme: dark) {
+  .brand-icon { filter: drop-shadow(0 8px 16px rgba(0,0,0,0.4)); background: #fff; }
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 32px;
+  margin: 0 0 10px 0;
+  color: var(--text-bright);
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--text-dim);
+  font-size: 17px;
+}
+
+/* Exercises Slider inside card */
+.exercises-frame {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 140px;
+}
+
+.exercise-text {
+  font-size: 18px;
+  color: var(--text-main);
+  text-align: center;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  justify-content: center;
+}
+
+.nav-btn {
+  background: var(--btn-bg);
+  color: var(--text-bright);
+  border: 1px solid var(--btn-border);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-btn:hover {
+  background: rgba(120,120,120,0.1);
+  border-color: rgba(120,120,120,0.3);
+  transform: scale(1.05);
+}
+
+.indicator-container {
+  display: flex;
+  gap: 10px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--dot-bg);
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: var(--primary);
+  transform: scale(1.5);
+  box-shadow: 0 0 6px var(--primary);
+}
+
+.skip-btn {
+  padding: 12px 32px;
+  background: transparent;
+  color: var(--text-dim);
+  border: 1px solid var(--border-color);
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.skip-btn:hover {
+  color: var(--text-bright);
+  background: var(--btn-bg);
+  border-color: var(--btn-border);
+  transform: translateY(-2px);
+}

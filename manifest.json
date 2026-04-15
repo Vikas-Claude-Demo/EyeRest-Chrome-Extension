@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "EyeRest: 20-20-20 Screen Timer",
+  "version": "1.0",
+  "description": "Combat digital eye fatigue with automated 20-20-20 rule reminders, guided vision exercises, and a stunning adaptive interface.",
+  "permissions": [
+    "alarms",
+    "storage",
+    "notifications",
+    "tabs"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "eyeCare"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

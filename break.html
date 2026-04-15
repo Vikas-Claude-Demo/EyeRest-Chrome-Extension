@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Take a break! - EyeRest</title>
+    <link rel="stylesheet" href="break.css">
+</head>
+<body>
+    <div class="container">
+        
+        <div class="timer-container">
+            <svg class="timer-circle">
+                <circle class="timer-bg" />
+                <circle class="timer-progress" id="timerProgress" />
+            </svg>
+            <div class="timer-text" id="timerText">20</div>
+        </div>
+
+        <div class="card">
+            <div class="header-content">
+                <img src="icons/logo.png" alt="EyeRest Logo" class="brand-icon">
+                <h1 id="messageTitle">Take a break!</h1>
+                <p class="subtitle">Spend a few seconds now, for a healthier future.</p>
+            </div>
+            
+            <div class="exercises-frame">
+                <div class="exercise-text" id="exerciseText">
+                    Blink your eyes, move them around and look at a distant object.
+                </div>
+                
+                <div class="controls">
+                    <button class="nav-btn prev-btn" id="prevBtn">&lt;</button>
+                    <div class="indicator-container" id="indicatorContainer">
+                        <!-- Dots populated by JS -->
+                    </div>
+                    <button class="nav-btn next-btn" id="nextBtn">&gt;</button>
+                </div>
+            </div>
+        </div>
+        
+        <button class="skip-btn" id="skipBtn">Skip Break</button>
+
+    </div>
+    <script src="break.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EyeRest - Protect Your Vision</title>
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --text-main: #c9d1d9;
+            --text-bright: #ffffff;
+            --primary: #3b82f6;
+            --card-bg: #161b22;
+        }
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg-color: #f8fafc;
+                --text-main: #475569;
+                --text-bright: #0f172a;
+                --primary: #3b82f6;
+                --card-bg: #ffffff;
+            }
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            padding: 40px;
+            background: var(--card-bg);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin: 20px;
+        }
+        h1 {
+            color: var(--text-bright);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: var(--text-bright);
+            margin-top: 30px;
+        }
+        p {
+            line-height: 1.6;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .logo img {
+            width: 64px;
+            height: 64px;
+        }
+        a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #8b949e;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="icons/logo.png" alt="EyeRest Logo">
+            <h1>EyeRest</h1>
+        </div>
+        
+        <p>EyeRest is a Chrome extension designed to combat digital eye fatigue with automated 20-20-20 rule reminders, guided vision exercises, and a stunning adaptive interface.</p>
+
+        <section id="privacy">
+            <h2>Privacy Policy</h2>
+            <p><strong>Last Updated: April 15, 2026</strong></p>
+            <p>The EyeRest Chrome Extension operates securely and entirely on your local machine.</p>
+            <ul>
+                <li><strong>No Data Collection:</strong> We do not collect, transmit, or sell any personal data or usage metrics.</li>
+                <li><strong>Local Storage:</strong> All your settings are stored locally in your browser using <code>chrome.storage.local</code>.</li>
+                <li><strong>Permissions:</strong> We only use permissions (alarms, storage, notifications, tabs) necessary for the core functionality of the extension.</li>
+                <li><strong>No Third-Parties:</strong> We do not use any third-party analytics or tracking services.</li>
+            </ul>
+        </section>
+
+        <footer>
+            &copy; 2026 EyeRest. Built for healthier vision.
+        </footer>
+    </div>
+</body>
+</html>
