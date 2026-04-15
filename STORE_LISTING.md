@@ -1,26 +1,25 @@
-# 👁️ EyeRest - Protect Vision
+# 👁️ EyeRest - Premium 20-20-20 Eye Care & Screen Time Tracker
 
-**Title:** EyeRest - Premium Vision Protection & 20-20-20 Timer
-**Short Description:** Protect your eyesight! Smart, beautiful, and effortless 20-20-20 rule eye care reminders with animated exercises.
+**Title:** EyeRest - Eye Protection & 20-20-20 Rule Timer
+**Short Description:** Best eye care reminder! Protect your vision from digital eye strain with the 20-20-20 rule and guided exercises.
 
 ---
 
 ## 📝 Full Description
 
-Protect your eyesight and eliminate digital eye strain with **EyeRest**, the most elegant and customizable break reminder extension for Google Chrome.
+Stop digital eye strain and save your eyesight with **EyeRest**, the ultimate **eye care** and **digital wellness** extension for Chrome. Whether you are a developer, designer, or student, EyeRest ensures your eyes get the rest they deserve using the scientifically proven **20-20-20 rule**.
 
-Built natively for optimal browser performance, EyeRest gently reminds you to rest your eyes using the scientifically proven 20-20-20 rule. Staring at screens for long periods causes fatigue, dry eyes, and tension headaches. Set your preferred focus interval, and when it’s time, EyeRest will notify you to perform quick, guided eye exercises.
+### 🔍 Why EyeRest?
+Staring at screens for hours leads to **Computer Vision Syndrome (CVS)**, dry eyes, and fatigue. EyeRest acts as your personal **screen time tracker** and **productivity timer**, reminding you to focus on something 20 feet away for 20 seconds, every 20 minutes.
 
-### ✨ Key Features
-- ⏱️ **Custom Intervals & Durations:** Fully adjustable break intervals and durations. You dictate your workflow.
-- 🧘‍♂️ **Animated Exercise Screen:** A beautiful, auto-cycling guide of proven eye exercises (Palming, Figure Eight, Focus shifting) that loads instantly during your break.
-- 🌗 **Adaptive UI Design:** Seamlessly syncs with your system's Light or Dark Mode, utilizing a modern, premium glassmorphic interface.
-- 🔔 **Custom Notifications:** Set dynamic desktop push notifications with personalized reminder messages.
-- ⚡ **Lightweight & Private:** Powered by Manifest V3, using Chrome’s native Alarms API for zero battery and memory drain. Operates 100% locally with absolute privacy—no data collection.
+### ✨ Key SEO Features
+- ⏱️ **20-20-20 Rule Reminders:** Fully customizable **rest reminders** for your workflow.
+- 🧘‍♂️ **Vision Exercises:** Guided **eye exercises** including Palming, Figure Eight, and Near-Far focus to relax eye muscles.
+- 🌗 **Premium Adaptive UI:** Stunning dark and light modes that function as a **blue light aware** interface.
+- 🔔 **Custom Alarms:** Set dynamic notifications as a **work-break timer** with personalized messages.
+- ⚡ **Productivity Boost:** Better eye health means better focus. Use it as a **pomodoro tracker** for your ocular health.
 
-### 🎯 Who is this for?
-Perfect for developers, designers, writers, students, and anyone spending extended hours in front of a monitor. Stop eye strain before it starts and adopt healthier digital habits.
+### 🎯 Keywords Targeted
+**Eye protection**, **vision care**, **screen time tracker**, **20-20-20 rule**, **eye strain relief**, **productivity timer**, **blue light aware**, **rest reminder**, **digital wellness**, **computer vision syndrome**, **work-break timer**, **eye exercises**, **wellness timer**, **focus timer**.
 
-**Add EyeRest - Protect Vision today and invest in your ocular health!**
-
-*(Optimized for: 20-20-20 rule, eye protection, screen time tracker, blue light awareness, vision care, pomodoro timer, eye strain relief, rest reminder, digital wellness).*
+**Download EyeRest today and invest in your long-term vision health!**
