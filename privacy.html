@@ -3,103 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EyeRest - Protect Your Vision</title>
+    <title>Privacy Policy - EyeRest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #0b0f19;
-            --text-main: #c9d1d9;
-            --text-bright: #ffffff;
+            --bg: #0b0f19;
+            --text-main: #94a3b8;
+            --text-bright: #f8fafc;
             --primary: #3b82f6;
-            --card-bg: #161b22;
+            --border: rgba(255, 255, 255, 0.1);
         }
         @media (prefers-color-scheme: light) {
             :root {
-                --bg-color: #f8fafc;
+                --bg: #ffffff;
                 --text-main: #475569;
                 --text-bright: #0f172a;
                 --primary: #3b82f6;
-                --card-bg: #ffffff;
+                --border: rgba(0, 0, 0, 0.1);
             }
         }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: var(--bg-color);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg);
             color: var(--text-main);
+            line-height: 1.8;
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
         }
         .container {
             max-width: 800px;
-            padding: 40px;
-            background: var(--card-bg);
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            margin: 20px;
+            margin: 0 auto;
+            padding: 80px 24px;
         }
-        h1 {
-            color: var(--text-bright);
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-        h2 {
-            color: var(--text-bright);
-            margin-top: 30px;
-        }
-        p {
-            line-height: 1.6;
+        nav {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 60px;
         }
         .logo {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--text-bright);
+            text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 15px;
-            margin-bottom: 30px;
+            gap: 10px;
         }
-        .logo img {
-            width: 64px;
-            height: 64px;
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3rem;
+            color: var(--text-bright);
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+        h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.75rem;
+            color: var(--text-bright);
+            margin-top: 50px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--primary);
+            display: inline-block;
+        }
+        p {
+            margin-bottom: 24px;
+            font-size: 1.1rem;
+        }
+        ul {
+            margin-bottom: 24px;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 12px;
+        }
+        .highlight-box {
+            background: rgba(59, 130, 246, 0.05);
+            border: 1px solid var(--border);
+            padding: 30px;
+            border-radius: 16px;
+            margin: 40px 0;
+        }
+        .last-updated {
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+        footer {
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            font-size: 0.9rem;
         }
         a {
             color: var(--primary);
             text-decoration: none;
         }
-        a:hover {
-            text-decoration: underline;
-        }
-        footer {
-            margin-top: 40px;
-            font-size: 0.9rem;
-            color: #8b949e;
-            text-align: center;
-        }
+        a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="logo">
-            <img src="icons/logo.png" alt="EyeRest Logo">
-            <h1>EyeRest</h1>
-        </div>
-        
-        <p>EyeRest is a Chrome extension designed to combat digital eye fatigue with automated 20-20-20 rule reminders, guided vision exercises, and a stunning adaptive interface.</p>
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="icons/logo.png" alt="" width="32">
+                EyeRest
+            </a>
+        </nav>
 
-        <section id="privacy">
-            <h2>Privacy Policy</h2>
-            <p><strong>Last Updated: April 15, 2026</strong></p>
-            <p>The EyeRest Chrome Extension operates securely and entirely on your local machine.</p>
+        <header>
+            <div class="last-updated">Last Updated: April 15, 2026</div>
+            <h1>Privacy Policy</h1>
+            <p>At EyeRest, we believe your health and your data should stay in your control. This Privacy Policy outlines how the EyeRest Chrome extension operates and why we collect <strong>absolutely zero</strong> personal data.</p>
+        </header>
+
+        <div class="highlight-box">
+            <p><strong>The "Zero-Data" Promise:</strong> EyeRest is built with a privacy-first architecture. We do not use any servers, analytics, or third-party tracking. Everything happens locally on your computer.</p>
+        </div>
+
+        <section>
+            <h2>1. No Data Collection</h2>
+            <p>EyeRest does not collect, store, transmit, or sell any personal information or usage data. This include, but is not limited to:</p>
             <ul>
-                <li><strong>No Data Collection:</strong> We do not collect, transmit, or sell any personal data or usage metrics.</li>
-                <li><strong>Local Storage:</strong> All your settings are stored locally in your browser using <code>chrome.storage.local</code>.</li>
-                <li><strong>Permissions:</strong> We only use permissions (alarms, storage, notifications, tabs) necessary for the core functionality of the extension.</li>
-                <li><strong>No Third-Parties:</strong> We do not use any third-party analytics or tracking services.</li>
+                <li>Your browsing history or habits.</li>
+                <li>Your geolocation or IP address.</li>
+                <li>Your email address or identity.</li>
+                <li>Usage metrics (e.g., how often you take breaks).</li>
             </ul>
         </section>
 
+        <section>
+            <h2>2. Permissions Explained</h2>
+            <p>The EyeRest extension requests only the minimum number of permissions required to function. Here is exactly why we need them:</p>
+            <ul>
+                <li><strong>Alarms:</strong> Used to run the 20-20-20 timer accurately in the background without draining your battery.</li>
+                <li><strong>Storage:</strong> Used to save your custom settings (break interval, duration, and theme) locally on your device.</li>
+                <li><strong>Notifications:</strong> Used to send you a gentle desktop nudge when it's time for a break.</li>
+                <li><strong>Tabs:</strong> Used to open the exercise screen in a new window during your rest period.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>3. Local Operation</h2>
+            <p>All your preferences (such as break time and exercise settings) are stored within your browser's local storage engine (<code>chrome.storage.local</code>). This data is never synced to any cloud and disappears the moment you uninstall the extension.</p>
+        </section>
+
+        <section>
+            <h2>4. Third-Party Links</h2>
+            <p>Our landing page and extension may contain links to our official GitHub repository. We are not responsible for the privacy practices of GitHub or any other third-party websites you may visit through these links.</p>
+        </section>
+
+        <section>
+            <h2>5. Open Source Transparency</h2>
+            <p>To provide total peace of mind, EyeRest is completely open source. You or any security professional can review the full source code on <a href="https://github.com/Vikas-Claude-Demo/EyeRest-Chrome-Extension">GitHub</a> to verify that no tracking or data harvesting exists in the codebase.</p>
+        </section>
+
+        <section>
+            <h2>6. Contact Us</h2>
+            <p>If you have any questions about this Privacy Policy or the security of the extension, you can open an issue on our GitHub repository or contact us directly at our development office.</p>
+        </section>
+
         <footer>
-            &copy; 2026 EyeRest. Built for healthier vision.
+            <p>&copy; 2026 EyeRest Vision Systems. Built for healthier vision and total privacy.</p>
+            <p><a href="index.html">Back to Homepage</a></p>
         </footer>
     </div>
 </body>
