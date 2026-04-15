@@ -3,10 +3,12 @@ chrome.runtime.onInstalled.addListener(() => {
     if (data.enabled === undefined) {
       chrome.storage.local.set({
         enabled: true,
-        interval: 20, // minutes
+        interval: 20, 
+        breakDuration: 20,
         showExercises: true,
         showNotification: true,
-        customMessage: "Take a break!"
+        customMessage: "Take a break!",
+        theme: 'dark'
       });
     }
     createAlarm();
@@ -15,12 +17,9 @@ chrome.runtime.onInstalled.addListener(() => {
 
 function createAlarm() {
   chrome.storage.local.get(['enabled', 'interval'], (data) => {
+    chrome.alarms.clear("breakAlarm");
     if (data.enabled) {
-      // Use delayInMinutes and recreate for simplicity
-      // and so we have an exact scheduled time for the popup
       chrome.alarms.create("breakAlarm", { delayInMinutes: data.interval || 20 });
-    } else {
-      chrome.alarms.clear("breakAlarm");
     }
   });
 }
@@ -34,7 +33,13 @@ chrome.storage.onChanged.addListener((changes, namespace) => {
 chrome.alarms.onAlarm.addListener((alarm) => {
   if (alarm.name === "breakAlarm") {
     triggerBreak();
-    createAlarm(); // schedule next break immediately
+    // Do NOT create next alarm here. Wait for message from break window.
+  }
+});
+
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  if (request.action === "breakFinished") {
+    createAlarm();
   }
 });
 
@@ -51,6 +56,9 @@ function triggerBreak() {
     
     if (data.showExercises) {
       chrome.tabs.create({ url: chrome.runtime.getURL("break.html") });
+    } else {
+      // If not showing exercises page, restart timer immediately
+      createAlarm();
     }
   });
 }

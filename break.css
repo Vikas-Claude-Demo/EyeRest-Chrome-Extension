@@ -124,17 +124,13 @@ body:not(.light-mode) .card {
   margin-bottom: 40px;
 }
 
-.brand-icon {
-  width: 72px;
-  height: 72px;
+.brand-text {
+  font-family: 'Outfit', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary);
   margin-bottom: 20px;
-  filter: drop-shadow(0 8px 16px rgba(0,0,0,0.1));
-  border-radius: 12px;
-  background: #fff;
-  padding: 5px;
-}
-body:not(.light-mode) .brand-icon {
-  filter: drop-shadow(0 8px 16px rgba(0,0,0,0.4));
+  letter-spacing: -1px;
 }
 
 h1 {
@@ -220,6 +216,48 @@ h1 {
   background: var(--primary);
   transform: scale(1.5);
   box-shadow: 0 0 6px var(--primary);
+}
+
+.action-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.extend-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--glass-bg);
+    padding: 8px 16px;
+    border-radius: 100px;
+    border: 1px solid var(--glass-border);
+    transition: opacity 0.3s;
+}
+
+.extend-group span {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-dim);
+}
+
+.extend-btn {
+    background: var(--btn-bg);
+    border: 1px solid var(--btn-border);
+    color: var(--text-bright);
+    padding: 4px 12px;
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.2s;
+}
+
+.extend-btn:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    transform: translateY(-2px);
 }
 
 .skip-btn {

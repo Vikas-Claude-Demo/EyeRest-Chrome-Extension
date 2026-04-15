@@ -64,13 +64,13 @@ document.addEventListener('DOMContentLoaded', () => {
     autoChangeInterval = setInterval(() => {
       currentExerciseIndex = (currentExerciseIndex + 1) % exercises.length;
       updateExercise();
-    }, 4000); // Automatically change exercises every 4 seconds
+    }, 4000);
   }
 
   prevBtn.addEventListener('click', () => {
     currentExerciseIndex = (currentExerciseIndex - 1 + exercises.length) % exercises.length;
     updateExercise();
-    startAutoCycle(); // Reset timer if manually interacted
+    startAutoCycle();
   });
 
   nextBtn.addEventListener('click', () => {
@@ -80,33 +80,40 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   updateExercise();
-  startAutoCycle(); // Start auto cycle
+  startAutoCycle();
 
   // Timer logic
+  let timeLeft = 0;
+  let totalDuration = 0;
+  let timerInterval;
+  let closeInterval;
+
   function startBreakTimer(breakDuration) {
-    let timeLeft = breakDuration;
+    totalDuration = breakDuration;
+    timeLeft = breakDuration;
     const timerText = document.getElementById('timerText');
     const timerProgress = document.getElementById('timerProgress');
     const skipBtn = document.getElementById('skipBtn');
+    const extendGroup = document.getElementById('extendGroup');
 
-    // Circumference of the circle (2 * PI * r) -> r = 66
     const circumference = 2 * Math.PI * 66;
     timerProgress.style.strokeDasharray = `${circumference} ${circumference}`;
     
     function updateTimer() {
       timerText.textContent = timeLeft;
-      
-      // update circular progress
-      const offset = circumference - (timeLeft / breakDuration) * circumference;
+      const offset = circumference - (timeLeft / totalDuration) * circumference;
       timerProgress.style.strokeDashoffset = offset;
 
       if (timeLeft <= 0) {
         clearInterval(timerInterval);
-        clearInterval(autoChangeInterval); // stop changing exercises when done
-        timerText.textContent = "\u2713"; // Checkmark
+        clearInterval(autoChangeInterval);
+        timerText.textContent = "\u2713";
         timerProgress.style.strokeDashoffset = 0;
         
-        // Auto-close countdown
+        // Disable extend buttons when closing
+        extendGroup.style.opacity = "0.5";
+        extendGroup.style.pointerEvents = "none";
+
         let closeCount = 3;
         const updateButtonText = () => {
           skipBtn.textContent = `Closing in ${closeCount}...`;
@@ -119,11 +126,10 @@ document.addEventListener('DOMContentLoaded', () => {
         
         updateButtonText();
         
-        const closeInterval = setInterval(() => {
+        closeInterval = setInterval(() => {
           closeCount--;
           if (closeCount <= 0) {
-            clearInterval(closeInterval);
-            window.close();
+            finishBreak();
           } else {
             updateButtonText();
           }
@@ -131,16 +137,56 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    const timerInterval = setInterval(() => {
+    timerInterval = setInterval(() => {
       timeLeft--;
       updateTimer();
     }, 1000);
     
-    updateTimer(); // init
+    updateTimer();
 
-    // Skip / Close functionality
+    // Skip functionality
     skipBtn.addEventListener('click', () => {
-      window.close();
+      finishBreak();
     });
+
+    // Extend functionality
+    document.querySelectorAll('.extend-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const toAdd = parseInt(btn.getAttribute('data-add'));
+        // If we were in close countdown, stop it
+        if (closeInterval) {
+          clearInterval(closeInterval);
+          closeInterval = null;
+          skipBtn.textContent = "Skip Break";
+          skipBtn.style = ""; // Reset styles
+          startAutoCycle();
+        }
+        
+        timeLeft += toAdd;
+        // Adjust totalDuration if needed for the progress bar or just let it overflow?
+        // Let's adjust totalDuration so the ring reflects the new state properly
+        if (timeLeft > totalDuration) {
+          totalDuration = timeLeft;
+          timerProgress.style.strokeDasharray = `${circumference} ${circumference}`;
+        }
+        
+        // If timer was finished, restart it
+        if (timeLeft > 0 && !timerInterval) {
+          timerInterval = setInterval(() => {
+            timeLeft--;
+            updateTimer();
+          }, 1000);
+        }
+        
+        updateTimer();
+      });
+    });
+  }
+
+  function finishBreak() {
+    clearInterval(timerInterval);
+    clearInterval(closeInterval);
+    chrome.runtime.sendMessage({ action: "breakFinished" });
+    window.close();
   }
 });
