@@ -9,10 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const customMessage = document.getElementById('customMessage');
   const timerDisplay = document.getElementById('timerDisplay');
   const resetBtn = document.getElementById('resetBtn');
+  const themeToggle = document.getElementById('themeToggle');
 
   // Load saved settings
   chrome.storage.local.get(
-    ['enabled', 'interval', 'breakDuration', 'showExercises', 'showNotification', 'customMessage'],
+    ['enabled', 'interval', 'breakDuration', 'showExercises', 'showNotification', 'customMessage', 'theme'],
     (data) => {
       enabledToggle.checked = data.enabled !== false;
       intervalSlider.value = data.interval || 20;
@@ -25,9 +26,29 @@ document.addEventListener('DOMContentLoaded', () => {
       notificationToggle.checked = data.showNotification !== false;
       customMessage.value = data.customMessage || "Take a break!";
       
+      // Apply theme
+      applyTheme(data.theme || 'dark');
+      
       updateDisplay();
     }
   );
+
+  function applyTheme(theme) {
+    if (theme === 'light') {
+      document.body.classList.add('light-mode');
+      themeToggle.textContent = '🌙';
+    } else {
+      document.body.classList.remove('light-mode');
+      themeToggle.textContent = '☀️';
+    }
+  }
+
+  themeToggle.addEventListener('click', () => {
+    const isLight = document.body.classList.contains('light-mode');
+    const newTheme = isLight ? 'dark' : 'light';
+    applyTheme(newTheme);
+    chrome.storage.local.set({ theme: newTheme });
+  });
 
   function saveSettings() {
     chrome.storage.local.set({

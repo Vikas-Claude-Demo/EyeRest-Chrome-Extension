@@ -1,4 +1,21 @@
 :root {
+  --bg-color: #0b0f19;
+  --card-bg: #161b22;
+  --border-color: #30363d;
+  --primary: #3b82f6; 
+  --text-main: #c9d1d9;
+  --text-bright: #ffffff;
+  --text-dim: #8b949e;
+  --timer-bg: rgba(255,255,255,0.05);
+  --glass-bg: rgba(0,0,0,0.2);
+  --glass-border: rgba(255,255,255,0.05);
+  --btn-bg: rgba(255,255,255,0.05);
+  --btn-border: rgba(255,255,255,0.1);
+  --dot-bg: rgba(255,255,255,0.2);
+  --bg-gradient: radial-gradient(circle at 50% 0%, rgba(59,130,246,0.1) 0%, transparent 50%);
+}
+
+body.light-mode {
   --bg-color: #f1f5f9;
   --card-bg: #ffffff;
   --border-color: #e2e8f0;
@@ -15,25 +32,6 @@
   --bg-gradient: radial-gradient(circle at 50% 0%, rgba(59,130,246,0.15) 0%, transparent 50%);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg-color: #0b0f19;
-    --card-bg: #161b22;
-    --border-color: #30363d;
-    --primary: #3b82f6; 
-    --text-main: #c9d1d9;
-    --text-bright: #ffffff;
-    --text-dim: #8b949e;
-    --timer-bg: rgba(255,255,255,0.05);
-    --glass-bg: rgba(0,0,0,0.2);
-    --glass-border: rgba(255,255,255,0.05);
-    --btn-bg: rgba(255,255,255,0.05);
-    --btn-border: rgba(255,255,255,0.1);
-    --dot-bg: rgba(255,255,255,0.2);
-    --bg-gradient: radial-gradient(circle at 50% 0%, rgba(59,130,246,0.1) 0%, transparent 50%);
-  }
-}
-
 body {
   margin: 0;
   padding: 0;
@@ -45,6 +43,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .container {
@@ -116,8 +115,8 @@ body {
   margin-bottom: 30px;
   backdrop-filter: blur(10px);
 }
-@media (prefers-color-scheme: dark) {
-  .card { box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); }
+body:not(.light-mode) .card {
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
 }
 
 .header-content {
@@ -134,8 +133,8 @@ body {
   background: #fff;
   padding: 5px;
 }
-@media (prefers-color-scheme: dark) {
-  .brand-icon { filter: drop-shadow(0 8px 16px rgba(0,0,0,0.4)); background: #fff; }
+body:not(.light-mode) .brand-icon {
+  filter: drop-shadow(0 8px 16px rgba(0,0,0,0.4));
 }
 
 h1 {

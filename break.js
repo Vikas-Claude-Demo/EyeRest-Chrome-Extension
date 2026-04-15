@@ -1,9 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
   const messageTitle = document.getElementById('messageTitle');
   
-  chrome.storage.local.get(['customMessage', 'breakDuration'], (data) => {
+  chrome.storage.local.get(['customMessage', 'breakDuration', 'theme'], (data) => {
     if (data.customMessage) {
       messageTitle.textContent = data.customMessage;
+    }
+    
+    if (data.theme === 'light') {
+      document.body.classList.add('light-mode');
     }
     
     // Start Timer with the configured duration

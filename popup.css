@@ -1,4 +1,22 @@
 :root {
+  /* Default Dark Mode Variables */
+  --bg-color: #0b0f19;
+  --panel-bg: rgba(255, 255, 255, 0.03);
+  --border-color: rgba(255, 255, 255, 0.08);
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --text-main: #c9d1d9;
+  --text-bright: #ffffff;
+  --text-dim: #8b949e;
+  --input-bg: rgba(0,0,0,0.2);
+  --slider-bg: #272c35;
+  --timer-bg: rgba(59, 130, 246, 0.1);
+  --header-bg: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%);
+  --logo-bg: #fff;
+  --switch-checked-bg: rgba(59, 130, 246, 0.2);
+}
+
+body.light-mode {
   --bg-color: #ffffff;
   --panel-bg: #f8fafc;
   --border-color: #e2e8f0;
@@ -15,25 +33,6 @@
   --switch-checked-bg: rgba(59, 130, 246, 0.1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg-color: #0b0f19;
-    --panel-bg: rgba(255, 255, 255, 0.03);
-    --border-color: rgba(255, 255, 255, 0.08);
-    --primary: #3b82f6;
-    --primary-hover: #2563eb;
-    --text-main: #c9d1d9;
-    --text-bright: #ffffff;
-    --text-dim: #8b949e;
-    --input-bg: rgba(0,0,0,0.2);
-    --slider-bg: #272c35;
-    --timer-bg: rgba(59, 130, 246, 0.1);
-    --header-bg: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 100%);
-    --logo-bg: #fff;
-    --switch-checked-bg: rgba(59, 130, 246, 0.2);
-  }
-}
-
 body {
   width: 320px;
   margin: 0;
@@ -43,6 +42,7 @@ body {
   background: var(--bg-color);
   user-select: none;
   box-sizing: border-box;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .header {
@@ -58,6 +58,31 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon-btn {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-bright);
+  font-size: 16px;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.icon-btn:hover {
+  background: var(--panel-bg);
+  border-color: var(--primary);
 }
 
 .eye-icon {
