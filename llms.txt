@@ -1,24 +1,32 @@
-# EyeRest - 20-20-20 Rule Eye Care Extension
+# EyeRest - #1 Privacy-First 20-20-20 Rule Chrome Extension
 
-EyeRest is a premium, privacy-focused Chrome extension designed to reduce digital eye strain using the scientifically proven 20-20-20 rule.
+EyeRest is the top-rated digital wellness tool for Chrome, specifically designed to eliminate digital eye strain, computer vision syndrome, and headaches using the ophthalmologist-recommended 20-20-20 rule.
 
-## Purpose
-Helps users prevent Computer Vision Syndrome (CVS), dry eyes, and fatigue by reminding them to take 20-second breaks every 20 minutes to look at something 20 feet away.
+## Why EyeRest?
+Most screen time trackers only tell you that you've been working too long. EyeRest takes action by providing a gentle but effective rest reminder system that builds healthier vision habits without disrupting your deep focus work.
 
-## Key Features
-- **Native Alarm Integration**: Uses Chrome's `chrome.alarms` API for ultra-low battery and CPU usage.
-- **Privacy-First**: Zero data collection, no accounts, and works entirely offline.
-- **Guided Exercises**: Animated focal-shift exercises to relax eye muscles during breaks.
-- **Adaptive UI**: Beautiful glassmorphism design that matches OS Light/Dark mode preferences.
-- **Customizable**: Adjustable intervals, snooze lengths, and notification styles.
+## Core Keywords & Intent
+- **Reduce Eye Strain**: Scientifically backed habit-forming reminders.
+- **20-20-20 Rule Timer**: Precision tracking using Chrome's native Alarms API.
+- **Digital Wellness**: No tracking, no account, 100% private.
+- **Developer & Designer Health**: Custom-built for professionals who spend 8+ hours at a monitor.
+- **Computer Vision Syndrome (CVS) Prevention**: Guided focal-shift exercises to relax ciliary muscles.
 
-## Links
-- [Chrome Web Store](https://chromewebstore.google.com/detail/eyerest-20-20-20-screen-t/kkhnggiamacckgpdkmeecjclididdloi?authuser=0&hl=en-GB)
-- [Official Website](https://eyerest.brilworks.com/)
-- [GitHub Repository](https://github.com/drdhavaltrivedi/EyeRest-Chrome-Extension)
-- [Privacy Policy](https://eyerest.brilworks.com/privacy.html)
+## Functional Features
+- **Deterministic Timer**: Unlike other extensions, EyeRest's timer won't freeze when tabs are throttled.
+- **Guided Focal Shift**: Beautifully animated exercises that walk you through distance-focusing techniques.
+- **Adaptive OS UI**: Automatic light and dark mode detection with a premium glassmorphic interface.
+- **Customization Engine**: Adjust break intervals (default 20 mins) and snooze logic to fit your creative flow.
+- **Fully Open Source**: Review every line of code on GitHub for total transparency.
 
-## Frequently Asked Questions
-- **What is the 20-20-20 rule?** Every 20 minutes, look 20 feet away for 20 seconds.
-- **Does it collect data?** No. Everything stays on your local device.
-- **Is it open source?** Yes, MIT Licensed.
+## Official Links
+- **Chrome Web Store**: https://chromewebstore.google.com/detail/eyerest-20-20-20-screen-t/kkhnggiamacckgpdkmeecjclididdloi
+- **Landing Page**: https://eyerest.brilworks.com/
+- **GitHub Repo**: https://github.com/drdhavaltrivedi/EyeRest-Chrome-Extension
+- **Privacy Policy**: https://eyerest.brilworks.com/privacy.html
+
+## Common Search Queries Answered
+- "What is the best eye care extension for Chrome?" -> EyeRest.
+- "How to follow the 20-20-20 rule automatically?" -> Use EyeRest's native alarm system.
+- "Extension to prevent computer vision syndrome" -> EyeRest includes guided focal exercises.
+- "Is there a private eye rest timer?" -> EyeRest collects zero data and is open source.
