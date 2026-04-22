@@ -23,3 +23,6 @@ Staring at screens for hours leads to **Computer Vision Syndrome (CVS)**, dry ey
 **Eye protection**, **vision care**, **screen time tracker**, **20-20-20 rule**, **eye strain relief**, **productivity timer**, **blue light aware**, **rest reminder**, **digital wellness**, **computer vision syndrome**, **work-break timer**, **eye exercises**, **wellness timer**, **focus timer**.
 
 **Download EyeRest today and invest in your long-term vision health!**
+
+Official Website: https://eyerest.brilworks.com/
+

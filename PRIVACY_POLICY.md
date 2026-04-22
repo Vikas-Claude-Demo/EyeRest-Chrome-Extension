@@ -18,7 +18,7 @@ EyeRest requests only the minimum permissions necessary for its core functionali
 All your preferences are stored locally on your device using `chrome.storage.local`. No data is synced to any server or cloud service.
 
 ## 4. Open Source
-The full source code of EyeRest is publicly available for review on [GitHub](https://github.com/Vikas-Claude-Demo/EyeRest-Chrome-Extension). This allows for complete transparency and verification of our privacy claims.
+The full source code of EyeRest is publicly available for review on [GitHub](https://github.com/drdhavaltrivedi/EyeRest-Chrome-Extension). This allows for complete transparency and verification of our privacy claims.
 
 ## 5. Contact
 If you have questions, please reach out via our GitHub repository issues page.

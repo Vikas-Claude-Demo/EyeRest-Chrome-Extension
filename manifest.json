@@ -11,8 +11,9 @@
   ],
   "action": {
     "default_popup": "popup.html",
-    "default_title": "eyeCare"
+    "default_title": "EyeRest: 20-20-20 Eye Care"
   },
+  "homepage_url": "https://eyerest.brilworks.com/",
   "background": {
     "service_worker": "background.js"
   },
